@@ -1,0 +1,76 @@
+ <html>
+<head>
+  <title>Lab 15</title>
+  <meta charset="utf-8">
+  <style>
+	  body
+	  {
+			background: url("clock.jpg") no-repeat;
+			background-size: cover;
+			font-size : 35pt;
+			color : #DC143C;
+			font-family:Gabriola;
+			
+	  }
+	  p
+	  {
+			font-weight: bold;
+			color: #DC143C;
+	  }
+	  div 
+	  {
+			background-color:  #ffffff; 
+			border-style: double;
+			border-width: 5px;
+			width : 1400px;
+			padding : 10px;
+			border-radius: 15px;
+			border-color: #DC143C;
+			margin-left : 250px;
+			margin-top : 200px;
+			opacity: 0.6;
+	  }
+  </style>
+</head>
+<body>
+<div id = "newdiv" align = "center">
+<p>Click on the link to see the IMDB website<br>
+<u><span id="movieName">Spy</span></u></p>
+</div>
+<script type="text/javascript">
+				function websites(url,name) 
+				{
+				this.url = url;
+				this.name = name;
+				}
+				
+				var obj0 = new websites("http://www.imdb.com/title/tt3079380/", "Spy");
+				var obj1 = new websites("http://www.imdb.com/title/tt2361509/?ref_=fn_al_tt_1", "The Intern");
+				var obj2 = new websites("http://www.imdb.com/title/tt2510894/?ref_=nv_sr_1", "Hotel Transylvania 2");
+				var obj3 = new websites("http://www.imdb.com/title/tt2395427/?ref_=nv_sr_1", "Avengers :Age of Ultrathon");
+				var obj4 = new websites("http://www.imdb.com/title/tt0369610/?ref_=fn_al_tt_1", "Jurassic World");
+				
+				var movies = [obj0,obj1,obj2,obj3,obj4];				
+				
+				function changeURL()
+				{					
+				var todayDate = new Date();
+				var todayMins = Math.floor(todayDate.getMinutes());
+				
+				var index = (todayMins % (movies.length)); 
+				
+				var divElem = document.getElementById("movieName");
+				var newMovieName = movies[index].name;
+				divElem.childNodes[0].nodeValue = newMovieName;
+				
+				var nowURL = movies[index].url; 
+				divElem.onclick = function(){window.open(nowURL,"","height=800,width=1000,location,menubar,toolbar,status,resizable");};
+				setTimeout("changeURL()",60000);
+				}
+				
+				changeURL();
+				
+				
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head><title>Lab 11</title>
+<style>
+		div	
+		{
+			width:50%;
+			height:100px;
+			padding:10px;
+			margin:10px 0px;
+		}
+		#newid
+		{
+			background-color:#FFB6C1;
+		}		
+		.divclassname
+		{
+			background-color:#E6E6FA;
+			border-style: solid;
+			border-width: 7px;
+			border-color: red;
+		}
+</style>
+</head>
+<body onload="init()">
+	<div id="newid" ><p><h1> Click me to add a new movie </h1></p></div>	
+	<script type="text/javascript">
+
+		function init()
+		{
+			newMovieAdd = document.getElementById("newid");
+            newMovieAdd.onclick = showMessage;
+		}
+		function showMessage()
+		{			
+			var newMovieName = prompt("Enter your Movie");
+			
+			var beforeMe= document.getElementsByTagName("p")[0]; 
+			var curr_div = beforeMe.parentNode;
+			
+			var NewDiv1 = document.createElement("div");
+			NewDiv1.className = "divclassname";
+			var Text = document.createTextNode(newMovieName);
+			var NewH = document.createElement("H1");
+			NewH.appendChild(Text);
+			NewDiv1.appendChild(NewH);
+		
+			document.body.insertBefore(NewDiv1,curr_div);
+		}
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<html lang="en">
+	<head>
+	<title>Lab19</title>
+	<meta charset="utf-8">
+	<style>
+		body
+		{
+			background: url("6.jpg") no-repeat;
+			background-size: cover;
+			font-size : 40pt;
+			color : red;
+			font-weight: bold;
+			font-family:Gabriola;
+		}
+		div.foo
+		{
+			font-weight: bold;
+			color : red;
+		}
+		div.transbox  
+		{
+			text-align : center;
+			margin-left : 450px;
+			margin-top : 50px;
+			margin-right : 455px;
+			opacity : 0.85;
+			-ms-filter:”alpha(opacity=80)”;
+		}
+		div.transbox table  
+		{
+			text-align : center;
+			font-weight: bold;
+			color : red;
+			font-size: 60%;
+			background-color: #FFB6C1;
+			
+		}
+		img
+		{
+			align: center;
+			height: 550px;
+			width: 550px;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	
+	
+	</script>
+	</head>	
+	<body align= "center"><br>
+		The Perfect Place for Fall Colors
+		<script type="text/javascript">
+		
+		/*var div1 = document.getElementById("myDiv1");
+        EventUtil.addHandler(div, "mouseover", function(text,img){
+		document.images[0].src = "Walk_to_Heaven.jpg";
+		var textDisplay = document.getElementById("displayText");
+		textDisplay.innerHTML = "Isn't this a walk to Heaven!";});
+		
+		EventUtil.addHandler(div, "mouseout", function(text,img){
+		document.images[0].src = "Walk_to_Heaven.jpg";
+		var textDisplay = document.getElementById("displayText");
+		textDisplay.innerHTML = "Isn't this a walk to Heaven!";});
+		
+		var div2 = document.getElementById("myDiv2");
+        EventUtil.addHandler(div, "mouseover", function(text,img){
+		document.images[0].src = "Walk_to_Heaven.jpg";
+		var textDisplay = document.getElementById("displayText");
+		textDisplay.innerHTML = "Isn't this a walk to Heaven!";});
+		
+		var div3 = document.getElementById("myDiv3");
+        EventUtil.addHandler(div, "mouseover", function(text,img){
+		document.images[0].src = "Walk_to_Heaven.jpg";
+		var textDisplay = document.getElementById("displayText");
+		textDisplay.innerHTML = "Isn't this a walk to Heaven!";});
+		*/
+		function showTextImg(text,img)
+		{
+		
+		document.images[0].src = img;
+		var displayTextNow = document.getElementById("displayText");
+		displayTextNow.style.color = 'green';
+		displayTextNow.innerHTML = text;
+		}
+		</script>
+	<div class='transbox'>
+	<table cellspacing="50">
+	<tr>
+		<td><br>
+			<div class="foo" id="myDiv1" 
+			onmouseover = "this.style.color='green'; showTextImg('Perfect Walk!','Walk_to_Heaven.jpg')"
+			onmouseout = "this.style.color='red';showTextImg('','FallColors.jpg')" > 
+			A walk in the woods
+			</div><br>
+		</td>
+		<td rowspan = 5>
+			<img src="FallColors.jpg" hspace="10" vspace="20" border=2 width="600" height="600">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="foo" id="myDiv2" 
+			onmouseover = "this.style.color='green';showTextImg('Perfect Drive!','Car_to_heaven.jpg')"
+			onmouseout = "this.style.color='red';showTextImg('','FallColors.jpg')" > 
+			A drive to "wonder"land!
+			</div><br>
+		</td>		
+	</tr>
+	<tr>
+		<td>
+			<div class="foo" id="myDiv3" 
+			onmouseover = "this.style.color='green';showTextImg('Perfect Travel!','Train_to_heaven.jpg')"
+			onmouseout = "this.style.color='red';showTextImg('','FallColors.jpg')" > 
+			A train to "merry"land!
+			</div><br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="foo" id="displayText">  </div>
+		</td>
+		
+	</tr>
+	</table>
+	</div>
+</body>
+</html>

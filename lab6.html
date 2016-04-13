@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Lab 6</title>
+	<meta charset="utf-8">
+		<style>
+		a
+		{
+		color : #FFFFF0;
+		}
+		body	
+		{
+		background: url("movie.jpeg") no-repeat;			
+		background-size: cover;
+		font-size : 18pt;
+		color : #BA55D3;
+		font-weight : normal;
+		}
+		div 
+		{
+		border-style: double;
+		border-width: 5px;
+		width : 500px;
+		padding : 25px;
+		border-radius: 25px;
+		border-color: #FFFFF0;
+		margin-left : 700px;
+		}
+
+		</style>
+			<script type="text/javascript">
+				function Movie(genre, title, rating,price) 
+				{
+								this.genre = genre;
+								this.title = title;
+								this.rating = rating;
+								this.price = price;
+								this.show = display;
+				}
+				function display() 
+				{
+							   document.write("<br><b>Genre : </b>"+this.genre + "<br>" + 
+							   "<b>Title : </b>"+this.title + "<br>" + 
+							   "<b>Rating : </b>"+this.rating + "<br>" +
+							   "<b>Price : $</b>"+ this.price+ "<br><br>" );
+				}
+
+			</script>
+	</head>
+<body align = 'center'>
+<script type="text/javascript">
+
+		var newmovie  = new Movie("Comedy", "<a href='http://www.imdb.com/title/tt0357413/?ref_=fn_al_tt_1'>Anchorman</a>", "PG-13","8");
+		var newmovie2 = new Movie("Animation", "<a href='http://www.imdb.com/title/tt0115433/?ref_=nv_sr_1'>101 Dalmatians</a>", "G","8");
+		var newmovie3 = new Movie("Horror", "<a href='http://www.imdb.com/title/tt2473510/?ref_=nv_sr_1'>Paranormal Activity : The Ghost Dimension</a>", "R","11.99");
+		
+		var newmovies = [newmovie,newmovie2,newmovie3];
+		
+		document.write("<h1>Movies Inventory</h1><hr>");
+		
+		document.write("<br><i><p><font color = 'yellow'>No.of movies in the inventory: </i>"+newmovies.length+"<br></font></p>");
+		document.write("<div><img src='Anchorman.jpg' align = 'right' height='170' width='150'>");newmovies[0].show();document.write("</div>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");newmovies[1].show();document.write("</div>");
+		document.write("<div><img src='PA.jpg' align = 'right' height='170' width='150'>");newmovies[2].show();document.write("</div>");
+		
+		//Pop and Display
+		var item = newmovies.pop(); 
+		document.write("<br><i><p><font color = 'yellow'>The Popped movie is: </font></p></i>");
+		document.write("<div><img src='PA.jpg' align = 'right' height='170' width='150'>");item.show();document.write("</div>");
+		
+		//Display the inventory after popping
+		document.write("<i><p><font color = 'yellow'>No.of movies in the inventory: "+newmovies.length+"</font></p></i>");
+		document.write("<div><img src='Anchorman.jpg' align = 'right' height='170' width='150'>");newmovies[0].show();document.write("</div>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");newmovies[1].show();document.write("</div>");
+		
+		//Pop and Display
+		var item2 = newmovies.pop(); 
+		document.write("<br><i><p><font color = 'yellow'>The Popped movie is: </font></p></i>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");item2.show();document.write("</div>");
+		document.write("<i><p><font color = 'yellow'>No.of movies in the inventory after popping: "+newmovies.length+"</font></p></i>");
+		
+		//Unshift and display
+		var count = newmovies.unshift(newmovie2);
+		document.write("<br><i><p><font color = 'yellow'>Unshifting the last popped movie and displaying the inventory </font></p></i>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");newmovies[0].show();document.write("</div>");
+		document.write("<div><img src='Anchorman.jpg' align = 'right' height='170' width='150'>");newmovies[1].show();document.write("</div>");
+		
+		//Another pop and display
+		var item3 = newmovies.pop(); 
+		document.write("<br><i><p><font color = 'yellow'>The Popped movie is: </font></p></i>");
+		document.write("<div><img src='Anchorman.jpg' align = 'right' height='170' width='150'>");item3.show();document.write("</div>");
+		
+		//Display the inventory after popping
+		document.write("<i><p><font color = 'yellow'>No.of movies in the inventory: "+newmovies.length+"</font></p></i>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");newmovies[0].show();;document.write("</div>");
+
+		//Push the first popped and display
+		var count2 = newmovies.push(newmovie3);
+		document.write("<i><p><font color = 'yellow'>No.of movies in the inventory after pushing: "+newmovies.length+"</font></p></i>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");newmovies[0].show();document.write("</div>");
+		document.write("<div><img src='PA.jpg' align = 'right' height='170' width='150'>");newmovies[1].show();document.write("</div>");
+		
+		//Shift and display the shifted movie
+		var item4 = newmovies.shift();
+		document.write("<br><i><p><font color = 'yellow'>Displaying the shifted element</font></p></i>");
+		document.write("<div><img src='101.jpg' align = 'right' height='170' width='150'>");item4.show();document.write("</div>");
+		
+		//Display the inventory after shifting
+		document.write("<i><p><font color = 'yellow'>No.of movies in the inventory after shifting: "+newmovies.length+"</font></p></i>");
+		document.write("<div><img src='PA.jpg' align = 'right' height='170' width='150'>");newmovies[0].show();document.write("</div>");
+	
+		
+</script>
+</body>
+</html>

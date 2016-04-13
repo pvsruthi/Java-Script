@@ -1,0 +1,113 @@
+ <html>
+<head>
+  <title>Lab 17</title>
+  <meta charset="utf-8">
+  <style>
+		body
+		{
+			background: url("JW.jpg") no-repeat;
+			background-size: cover;
+			font-size : 35pt;
+			color : #ffffff;
+			font-family:Gabriola;
+		}
+		div.transbox table 
+		{
+			margin: 10px;
+			margin-left : 650px;
+			margin-top : 100px; 
+			font-weight: bold;
+			font-size: 60%;
+			color : #000000;
+			background-color: #D3D3D3;
+			padding : 10px; 
+			opacity : 0.95;
+		}
+		input[type=button]
+		{
+			font-family:Gabriola;
+			font-weight: bold;
+			font-size: 150%;
+			color: red;
+			width : 150px;
+			background-color: yellow;
+		}
+		button[type=reset] 
+		{
+			font-family:Gabriola;
+			font-weight: bold;
+			font-size: 150%;
+			color: red;
+			width : 150px;
+			background-color: yellow;
+		}
+  </style>
+	<script type="text/javascript">
+	function okForm (form) 
+	{
+		var url,heightNew,widthNew,locationNew,menubarNew,toolbarNew,statusNew,scrollbarsNew,resizableNew;
+		var form=document.getElementById('form');
+		url = form.url.value;
+		widthNew = form.width.value;
+		heightNew = form.height.value;
+		
+		var dim = "height="+heightNew+",width="+widthNew;
+		
+		if (form.loc.checked == true) { dim += ",location=yes";}
+		if (form.menu.checked == true) {dim += ",menubar=yes";}
+		if (form.resize.checked == true) {dim += ",resizable=yes";}
+		if (form.scroll.checked == true) {dim += ",scrollbars=yes"}
+		if (form.toolbar.checked == true) {dim += ",toolbar=yes";}			
+		window.open(url,"",""+dim+"");
+	}
+	</script>
+</head>
+<body>
+<p align = "center">Please select the features for your window</p>
+  <div class="transbox">
+    		<FORM id="form">					
+				<table border="2"  bgcolor="#D3D3D3" color="#00CED1" cellspacing="5">
+					<col width="230">
+					<col width="330">
+					<tr>
+					<td>URL</td>
+					<td><INPUT TYPE ="text" NAME = "url" value="http://"></td>
+					</tr>
+					<tr>
+					<td>Toolbar</td>
+					<td><INPUT TYPE="checkbox" NAME="toolbar" value="0"></td>
+					</tr>
+					<tr>
+					<td>Location</td>
+					<td><INPUT TYPE="checkbox" NAME="loc" value="0"></td>
+					</tr>
+					<tr>
+					<td>Menubar</td>
+					<td><INPUT TYPE="checkbox" NAME="menu" value="0"></td>
+					</tr>
+					<tr>
+					<td>Scrollbars</td>
+					<td><INPUT TYPE="checkbox" NAME="scroll" value="0"></td>
+					</tr>
+					<tr>
+					<td>Resizable</td>
+					<td><INPUT TYPE="checkbox" NAME="resize" value="0"></td>
+					</tr>
+					<tr>
+					<td>Width</td>
+					<td><INPUT TYPE ="text" NAME = "width"></td>
+					</tr>
+					<tr>
+					<td>Height</td>
+					<td><INPUT TYPE ="text" NAME = "height"></td>
+					</tr>
+					<tr>
+					<td><INPUT TYPE="button" VALUE = "Submit" onclick = "okForm(this);"/></td>
+					<td><button TYPE ="Reset" VALUE = "Reset" onclick = "form.reset();"/>Reset</td>
+					</tr>
+				</table>
+		</FORM>
+  </div>
+</div>
+</body>
+</html>

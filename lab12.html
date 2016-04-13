@@ -1,0 +1,43 @@
+ <html>
+<head><title>Lab 12</title>
+<meta charset="utf-8">
+<style>
+		body	
+		{
+		font-size : 20pt;
+		font-family:Gabriola;
+		background-color: pink;
+		}
+</style>
+	<script type="text/javascript">
+
+		function init()
+		{			
+			var reg_exp1 = /\w/;
+			var reg_exp2 = /\D/;
+			var reg_exp3 = /[A-Z][a-z]+\s/;
+			var reg_exp4 = /#\d{5}\.\d/;	
+			do
+			{		
+				var myText = prompt("Enter a text('stop' to exit)","stop");								
+				var ans1,ans2,ans3,ans4;
+					if (reg_exp1.test(myText)){ ans1= "It's a match";}else{ ans1= "No match";}			
+					if (reg_exp2.test(myText)){ ans2= "It's a match";}else{ ans2= "No match";}			
+					if (reg_exp3.test(myText)){ ans3= "It's a match";}else{ ans3= "No match";}			
+					if (reg_exp4.test(myText)){ ans4= "It's a match";}else{ ans4= "No match";}
+				display(myText,ans1,ans2,ans3,ans4);				
+			
+			}while(myText!="stop")
+		}
+		
+		function display(myText,ans1,ans2,ans3,ans4)
+		{
+			var NewDiv = document.getElementsByTagName("p")[0];		
+			NewDiv.innerHTML = "<br>The text is: "+myText+"<p>Match a string that contains at least one character in A-Z, a-z, 0-9 and _<br>"+ans1+"<br>Match a string that does not contain a number between 0 and 9<br>"+ans2+"<br>Search for an uppercase letter, folowed by one or more lowercase letters, followed by a space.<br>"+ans3+"<br>Find a # sign, followed by excatly 5 repeating digits, a period, and another digit<br>"+ans4+"</p>";
+		}
+	</script>
+</head>
+<body onload="init()">
+	<p id ='text1'><br>Match a string that contains at least one character in A-Z, a-z, 0-9 and _<br><br>Match a string that does not contain a number between 0 and 9<br><br>Search for an uppercase letter, folowed by one or more lowercase letters, followed by a space.<br><br>Find a # sign, followed by excatly 5 repeating digits, a period, and another digit<br></p>
+</body>
+</html>

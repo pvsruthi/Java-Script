@@ -1,0 +1,105 @@
+<html lang="en">
+	<head>
+	<title>Lab18</title>
+	<meta charset="utf-8">
+	<style>
+		body
+		{
+			background: url("1.jpg") no-repeat;
+			background-size: cover;
+			font-size : 30pt;
+			color : #ffffff;
+			font-family:Gabriola;
+		}
+		div.transbox  
+		{
+			text-align : center;
+			margin-left : 150px;
+			margin-top : 500px;
+			margin-right : 300px;
+			font-weight: bold;
+			color : #000000;
+			background-color: #D3D3D3;
+			opacity : 0.95;
+		}
+		input[type=button]
+		{
+			font-family:Gabriola;
+			font-weight: bold;
+			font-size: 50%;
+			color: blue;
+			width : 150px;
+		}
+	</style>
+	<script type="text/javascript">
+	
+	//Create an array of at least 10 messages.
+	msg0 = " Welcome to my page!";
+	msg1 = " I see you came back";
+	msg2 = " Oh! It's you again!!";
+	msg3 = " You must be curious!";
+	msg4 = " You are definitely  curious!!";
+	msg5 = " Ok, just so that you know, I'm trying to create some cookies!";
+	msg6 = " So if you reviit my page, my cookie counter will increment.";
+	msg7 = " And on clicking the reset counter the cookie counter is reset.";
+	msg8 = " Everytime you visit, if the number of visits is more than 10, you can see the msgs all over agian!";
+	msg9 = " Thats about it! The next msg will start over again!";
+
+	arraymsg = [msg0,msg1,msg2,msg3,msg4,msg5,msg6,msg7,msg8,msg9];
+		
+	function getCookie(name)
+	{		
+			var search = escape(name) + "=";
+			var rval = "";
+			var offset = 0;
+			var end = 0;
+			if (navigator.cookieEnabled) 
+			{
+				if (document.cookie.length > 0) 
+				{
+					offset = document.cookie.indexOf(search);
+						if (offset != -1)  
+						{
+							offset += search.length;
+							end = document.cookie.indexOf(";", offset);
+							if (end == -1)  {end = document.cookie.length;}
+							var rval = unescape(document.cookie.substring(offset, end));
+							if (isNaN(rval)) { rval = 0;}//alert("rval : "+rval);
+							return rval;
+						}else {return 0;}
+				}else {return 0;}			
+			} 
+			else { alert("Please enable cookie");	}
+	}
+	
+	function setCookie(name,value)
+	{
+			document.cookie = name + "=" + value;//alert("Yay!! Cookie Set!!"+document.cookie);
+	}
+	function resetCounter()
+	{
+		counter = 0;
+		setCookie("Number_of_visits",counter);
+		location.reload();
+	}
+	</script>
+	</head>	
+<body align= "center">
+	<FORM NAME=cookieForm>
+		<script type="text/javascript">
+			//Onloading getCookie			
+			var counter = getCookie("Number_of_visits");																		 
+			//Cookie doesn't exist, Increment the counter
+			counter ++;			
+			//set the counter - check with array length
+			if(counter > (arraymsg.length)) {counter = 1;}	
+			//print no.of.visits and message			
+			document.write("<div class='transbox'>You have visited " + counter + " time(s)"+arraymsg[counter - 1]+"</div>"); 	
+			//setcookie for no.of.visits
+			setCookie("Number_of_visits",counter);				
+		</script>
+	<INPUT TYPE="button" value="Revisit Page" onClick="location.reload();"/>
+	<INPUT TYPE="button" value="Reset Counter" onClick="resetCounter();"/>
+	</FORM>
+</body>
+</html>

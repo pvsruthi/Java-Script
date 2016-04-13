@@ -1,0 +1,99 @@
+ <html>
+<head>
+  <title>Lab 16</title>
+  <meta charset="utf-8">
+  <style>
+		body
+		{
+			background: url("blackboard.jpg") no-repeat;
+			background-size: cover;
+			font-size : 35pt;
+			color : #ffffff;
+			font-family:Gabriola;
+			margin-top : 50px;
+			
+		}
+
+		input[type=button] 
+		{
+			color: #000000;
+			font-weight: bold;
+			font-size: 250%;
+			border-style: double;
+			border-width: 5px;
+			width : 300px;
+			padding : 10px;
+			border-radius:10px;
+		}
+		input[type=reset] 
+		{
+			font-weight: bold;
+			font-size: 250%;
+			color: #000000;
+			border-style: double;
+			border-width: 5px;
+			width : 300px;
+			padding : 10px;
+			border-radius:10px;
+			position:relative;
+		}
+		input[type=text] 
+		{
+			color: #000000;
+			font-weight: bold;
+			font-size: 250%;
+			border-style: double;
+			border-width: 5px;
+			width : 1300px;
+			padding : 10px;
+			border-radius:10px;
+			position:relative;
+			border-color: #00CED1;
+		}
+
+  </style>
+  <script type="text/javascript">
+		function display(num)
+		{
+			form.answer.value = form.answer.value + num;
+		}
+  </script>
+</head>
+<body>
+<h1 align = "center">MY CALCULATOR</h1>	
+		<FORM name="form">
+			<div align = "center">
+				<table border="2" color="#00CED1" cellspacing="30">
+					<tr>
+					<td colspan=4><INPUT TYPE="text" NAME="answer"></td>
+					</tr>
+					<tr>
+					<td><INPUT TYPE ="button" VALUE = "1" NAME = "1" onclick = "display(1)"></td>
+					<td><INPUT TYPE ="button" VALUE = "2" NAME = "2" onclick = "display(2)"></td>
+					<td><INPUT TYPE ="button" VALUE = "3" NAME = "3" onclick = "display(3)"></td>
+					<td><INPUT TYPE ="button" VALUE = "+" NAME = "+" onclick = "display('+')"></td>
+					</tr>
+					<tr>
+					<td><INPUT TYPE ="button" VALUE = "4" NAME = "4" onclick = "display(4)"></td>
+					<td><INPUT TYPE ="button" VALUE = "5" NAME = "5" onclick = "display(5)"></td>
+					<td><INPUT TYPE ="button" VALUE = "6" NAME = "6" onclick = "display(6)"></td>
+					<td><INPUT TYPE ="button" VALUE = "-" NAME = "-" onclick = "display('-')"></td>
+					</tr>
+					<tr>
+					<td><INPUT TYPE ="button" VALUE = "7" NAME = "7" onclick = "display(7)"></td>
+					<td><INPUT TYPE ="button" VALUE = "8" NAME = "8" onclick = "display(8)"></td>
+					<td><INPUT TYPE ="button" VALUE = "9" NAME = "9" onclick = "display(9)"></td>
+					<td><INPUT TYPE ="button" VALUE = "*" NAME = "*" onclick = "display('*')"></td>
+					</tr>
+					<tr>
+					<td><INPUT TYPE ="reset" VALUE = "C" NAME = "C"></td>
+					<td><INPUT TYPE ="button" VALUE = "0" NAME = "0" onclick = "display(0)"></td>
+					<td><INPUT TYPE ="button" VALUE = "=" NAME = "=" onclick = "form.answer.value = eval(form.answer.value);"></td>
+					<td><INPUT TYPE ="button" VALUE = "/" NAME = "/" onclick = "display('/')"></td>
+					</tr>
+				</table>
+			</div>
+		</FORM>
+
+</body>
+</html>

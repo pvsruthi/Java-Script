@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Lab 13</title>
+  <meta charset="utf-8">
+  <style>
+  
+			body
+			{
+				font-size : 20pt;
+				font-family:Gabriola;
+			}
+			#box 
+			{
+				width: 90%;
+				height: 60%;
+				padding: 25px;
+				margin: 25px;
+				background-color: #95E84C;
+				border: 25px solid;
+				border-radius: 15px 380px 15px 380px;
+			}
+  
+  </style>    
+  <script type="text/javascript">
+  function init()
+  {
+		
+		var RGBr = Math.floor(Math.random() * 256);
+		var RGBg = Math.floor(Math.random() * 256);
+		var RGBb = Math.floor(Math.random() * 256);
+		
+		var RGBColor = RGBr+","+RGBg+","+RGBb;
+		
+		var HexR= RGBr.toString(16);
+		var HexG= RGBg.toString(16);
+		var HexB= RGBb.toString(16);
+		
+		if(HexR.length <2) HexR= ("0"+HexR);
+		if(HexG.length <2) HexG= ("0"+HexG);
+		if(HexB.length <2) HexB= ("0"+HexB);		
+		
+		var HexColor = "#"+HexR+HexG+HexB;	
+		var HexColorUpperCase = HexColor.toUpperCase();
+		
+		document.getElementById('box').style.background = HexColor;
+		document.getElementById('RGB').innerHTML = RGBColor;
+		document.getElementById('HEX').innerHTML = HexColorUpperCase;
+ }
+  </script>
+  
+</head>
+	<body onload='init()' align='center'><br><br>
+		<div id = "box">
+		<br> Background Color is Randomly generated<br>
+		RGB color code is :<p id='RGB'>149,232,76</p><br>
+		Hex color code is :<p id='HEX'>#95E84C</p>
+		<a href='javascript:location.reload();'>Click to Randomly change color</a>
+		</div>				
+	</body>
+</html>

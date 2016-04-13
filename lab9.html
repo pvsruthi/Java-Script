@@ -1,0 +1,53 @@
+ <html>
+<head>
+	<title>Lab 9</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	newWin = window.open("", "", "height=600,width=800,location,menubar,toolbar,status,resizable");		
+	newWin.document.write("<p><b>The new screen, with properties listed below: </b></p>");
+	newWin.document.bgColor = "lightblue";
+	newWin.document.fgColor = "red";
+	newWin.document.write("Height = " + screen.height);
+	newWin.document.write("<br>");
+	newWin.document.write("Width = " + screen.width);
+	newWin.document.write("<br>");	
+	
+	//Navigator Properties
+	newWin.document.write("The appCodeName is: " + navigator.appCodeName);newWin.document.write("<br>");
+	newWin.document.write("The appName is: " + navigator.appName);newWin.document.write("<br>");
+	newWin.document.write("The appVersion is: " + navigator.appVersion);newWin.document.write("<br>");
+	newWin.document.write("The userAgent is: " + navigator.userAgent);newWin.document.write("<br>");
+	newWin.document.write("The language is: " + navigator.language);newWin.document.write("<br>");
+	newWin.document.write("The platform is: " + navigator.platform);newWin.document.write("<br>");
+	newWin.document.write("mimeTypes length: " + navigator.mimeTypes.length + "<br><br>");newWin.document.write("<br>");
+	for (var i=0; i<navigator.mimeTypes.length; i++) 
+	{
+		newWin.document.write("description: " + navigator.mimeTypes[i].description + "<br>");
+		newWin.document.write("plugin: " + navigator.mimeTypes[i].enabledPlugin + "<br>");
+		newWin.document.write("type: " + navigator.mimeTypes[i].type + "<br>");
+		newWin.document.write("suffixes: " + navigator.mimeTypes[i].suffixes + "<br>");
+	}
+	newWin.document.write("plugins length: " + navigator.plugins.length + "<br><br>");
+	for (var i=0; i<navigator.plugins.length; i++) 
+	{
+		newWin.document.write("name: " + navigator.plugins[i].name + "<br>");
+		newWin.document.write("filename: " + navigator.plugins[i].filename + "<br>");
+		newWin.document.write("description: " + navigator.plugins[i].description + "<br>");
+		newWin.document.write("length: " + navigator.plugins[i].length + "<br>");
+	}	
+	//Setting a delay and resizing
+	function display() 
+	{
+	  newWin.window.resizeTo((screen.height/3),(screen.width/3));
+	}
+	function Update() 
+	{
+	  newWin.document.write("<p><b><br>This window will resize to (1/3)rd its size in few seconds.</b></p>");
+	  setInterval("display();",8000);
+	}
+	Update();	
+	</script>
+</head>
+<body>
+</body>
+</html>

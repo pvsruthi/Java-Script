@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Lab 5</title>
+	<meta charset="utf-8">
+		<style>
+		body	
+		{
+		background: url("roll5.png") no-repeat;			
+		background-size: 2000px 1000px;
+		font-size : 18pt;
+		font-weight : bold;
+		}
+		</style>
+			<script type="text/javascript">
+				function Movie(genre, title, rating,price) 
+				{
+				this.genre = genre;
+				this.title = title;
+				this.rating = rating;
+				this.price = price;
+				this.show = display;
+				}
+				function display() 
+				{
+				document.write("<br>Genre : "+this.genre + "<br>" + 
+							   "Title : "+this.title + "<br>" + 
+							   "Rating : "+this.rating + "<br>" +
+							   "Price : $"+ this.price+ "<br><br>" );
+				}
+
+			</script>
+	</head>
+<body align = 'center'>
+<p>
+<script type="text/javascript">
+
+		var newmovie = new Movie("Comedy", "<a href='http://www.imdb.com/title/tt0357413/?ref_=fn_al_tt_1'>Anchorman</a>", "PG-13","8");
+		var newmovie2 = new Movie("Animation", "<a href='http://www.imdb.com/title/tt0115433/?ref_=nv_sr_1'>101 Dalmatians</a>", "G","8");
+		var newmovie3 = new Movie("Horror", "<a href='http://www.imdb.com/title/tt2473510/?ref_=nv_sr_1'>Paranormal Activity : The Ghost Dimension</a>", "R","11.99");
+		var newmovie4 = new Movie("Drama", "<a href='http://www.imdb.com/title/tt2503944/?ref_=fn_al_tt_1'>Burnt</a>", "R","10.99");
+		var newmovie5 = new Movie("Adventure", "<a href='http://www.imdb.com/title/tt3659388/?ref_=fn_al_tt_1'>The Martian</a>", "PG-13","12.99");
+		document.write("<b>Movies this Winter!!</b> <br><br><br>");
+		newmovie.show();
+		newmovie2.show();
+		newmovie3.show();
+		newmovie4.show();
+		newmovie5.show();
+		
+
+</script>
+</p>
+</body>
+</html>

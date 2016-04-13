@@ -1,0 +1,73 @@
+<html>
+<head><title>Lab 10</title>
+<style>
+		body	
+		{
+		font-size : 18pt;
+		font-family:Gabriola;
+		align : center;
+		color : #006400;
+		}
+		img
+		{
+		height: 350px;
+		width: 350px;
+		}
+		.divclassname
+		{
+			background-color:#FFB6C1;
+		}
+</style>
+</head>
+<body>
+<div id ="divtag1" style='background-color:#E6E6FA'>
+	<p>This lab exercise is about movies, so I would like to include some of my favourite movies.</p>
+	<p>1. Jurassic world</p>
+	<p>2. The Hunger Games</p>
+</p>
+</div>
+<script type="text/javascript">
+<!-- HIDE FROM OTHER BROWSERS
+
+	//I part
+	var favmovie1= prompt("What is your favourite movie among these??");	
+	
+	var NewDiv1 = document.createElement("div");
+	NewDiv1.className = "divclassname";
+	NewDiv1.innerHTML = "<div id='divtag2'><p id='text2'>"+favmovie1+" is a very good movie!!</p></div>";
+	
+	var beforeMe= document.getElementsByTagName("p")[0]; 
+	var curr_div = beforeMe.parentNode;
+	document.body.insertBefore(NewDiv1,curr_div);
+	
+	//II Part	
+	var favmovie2= prompt("What is your other favourite movie among these??");
+	
+	var Text = document.createTextNode(favmovie2);
+	var NewH = document.createElement("H1");
+	NewH.appendChild(Text);
+	document.body.appendChild(NewH);
+	
+	var NewDiv2 = document.createElement("div");
+	NewDiv2.className = "divclassname";
+	if(favmovie2 == "The Hunger Games")
+	{
+		NewDiv2.innerHTML = "<div id='divtag3'><p id = 'text3'>A pictuer is worth a 1000 words!!<br><img src = 'HG.jpg'></p></div>";
+		document.body.appendChild(NewDiv2);
+	}
+	else if(favmovie2 == "Jurassic World")
+	{
+		NewDiv2.innerHTML = "<div id='divtag4'><p id = 'text4'>A pictuer is worth a 1000 words!!<br><img src = 'JWBack.jpg'></p></div>";
+		document.body.appendChild(NewDiv2);
+	}
+	else
+	{
+		document.write("Enter either 'Jurassic World' or 'The Hunger Games' only please!");
+	}
+		
+	
+// STOP HIDING FROM OTHER BROWSERS -->
+</script>
+<p></p>
+</body>
+</html>

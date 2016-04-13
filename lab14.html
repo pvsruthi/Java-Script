@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Lab 14</title>
+  <meta charset="utf-8">
+  <style>
+	  body
+	  {
+			background: url("HB.jpg") no-repeat;
+			background-size: cover;
+			font-size : 25pt;
+			color : #DC143C;
+			font-family:Gabriola;
+			
+	  }
+	  div 
+	  {
+			border-style: double;
+			border-width: 5px;
+			width : 800px;
+			padding : 10px;
+			border-radius: 75px;
+			border-color: #DC143C;
+			margin-left : 150px;
+			margin-top : 130px;
+	  }
+  </style>
+<script type="text/javascript">
+ 		var emonthname = prompt("What month were you born in? ");
+		var edayname   = prompt("What day were you born on? ");
+		var eyearname  = prompt("What year were you born in? ");
+</script>
+</head>
+<body>
+<div><h1 align = "center">My Age</h1>
+<script type="text/javascript">
+
+		function getDayName(day) 
+		{
+			var ar1 = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+			return ar1[day];
+		}
+		function getMonthName(month) 
+		{
+			var ar = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+			return ar[month];
+		}
+			
+		var todayDate = new Date();
+		var dayName 	= getDayName(todayDate.getDay());
+		var monthName 	= getMonthName(todayDate.getMonth());
+		document.write("<p align='center'> Today is "+dayName+" , "+monthName+" "+todayDate.getDate()+" , "+todayDate.getFullYear()+"  "+todayDate.getHours()+":"+todayDate.getMinutes()+":"+todayDate.getSeconds());
+		
+		var strdate = eyearname+","+emonthname+","+edayname;
+		var enteredDate = new Date(Date.parse(strdate));
+		
+		var monthname1 = getMonthName(enteredDate.getMonth());
+		document.write("<br>I was born on, "+monthname1+" "+enteredDate.getDate()+" , "+enteredDate.getFullYear()+". ("+monthname1+"/"+edayname+"/"+eyearname+")");
+
+		var diff_date 	= todayDate - enteredDate;
+		var years1  	= (diff_date/31536000000);
+		var days1 		= (((diff_date % 31536000000))/86400000);
+		var hours1 		= (((diff_date % 31536000000) %86400000)/3600000);
+		var minutes1 	= (((((diff_date % 31536000000) % 2628000000)%86400000)%3600000)/60000);
+		var seconds1 	= ((((((diff_date % 31536000000) % 2628000000)%86400000)%3600000)%60000)/1000);
+		
+		document.write("<br>I am "+Math.floor(years1)+" years old,and will turn "+Math.floor(years1+1)+" in:");
+		document.write("<br>"+Math.floor(365-days1)+" days, "+Math.floor(24-hours1)+" hours, "+Math.floor(60-minutes1)+" minutes, "+Math.floor(60-seconds1)+" seconds.");
+		
+		
+		var days = ((diff_date /86400000));
+		var hours = (((diff_date % 31536000000) %86400000)/3600000);
+		var minutes = (((((diff_date % 31536000000) % 2628000000)%86400000)%3600000)/60000);
+		var seconds = ((((((diff_date % 31536000000) % 2628000000)%86400000)%3600000)%60000)/1000);
+		document.write("<br>I have been alive for...<br>"+Math.floor(days)+" days, "+Math.floor(hours)+" hours, "+Math.floor(minutes)+" minutes, "+Math.floor(seconds)+" seconds.");
+		
+		
+
+ </script>
+</div>
+ </body>
+</html>

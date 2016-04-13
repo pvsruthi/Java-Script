@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html lang="en">
+	<head>
+	<title>Lab 7</title>
+	<meta charset="utf-8">
+		<style>
+		a
+		{
+		color : #FFFFF0;
+		}
+		body	
+		{
+		background: url("movie.jpeg") no-repeat;			
+		background-size: cover;
+		font-size : 18pt;
+		color : #FFFFF0;		
+		}
+		div 
+		{
+		border-style: double;
+		border-width: 5px;
+		width : 500px;
+		padding : 25px;
+		border-radius: 25px;
+		border-color: #FFFFF0;
+		margin-left : 700px;
+		}
+		img
+		{
+		align: right;
+		height: 250px;
+		width: 200px;
+		}
+		</style>
+			<script type="text/javascript">
+				function Movie(genre, title, rating,price,bg) 
+				{
+				this.genre = genre;
+				this.title = title;
+				this.rating = rating;
+				this.price = price;
+				this.bg = bg;
+				this.show = display;
+				}
+				function display() 
+				{
+				document.write("<br>Genre : "+this.genre + "<br>" + 
+							   "Title : "+this.title + "<br>" + 
+							   "Rating : "+this.rating + "<br>" +
+							   "Price : $"+ this.price+ "<br><br>"+" <br><img src=" + this.bg + "></p>" );
+				}
+			</script>
+	</head>
+<body align = 'center'>
+<p>
+<script type="text/javascript">
+
+		var C1 = new Movie("Comedy", "<a href='http://www.imdb.com/title/tt3079380/'>Spy</a>", "R","11.99","spy.jpg");
+		var C2 = new Movie("Comedy", "<a href='http://www.imdb.com/title/tt2361509/?ref_=fn_al_tt_1'>The Intern</a>", "PG-13","12.99","intern.jpg");
+		var C3 = new Movie("Comedy", "<a href='http://www.imdb.com/title/tt2510894/?ref_=nv_sr_1'>Hotel Transylvania 2</a>", "PG","11.99","hotel.jpg");
+		
+		var A1 = new Movie("Action", "<a href='http://www.imdb.com/title/tt2395427/?ref_=nv_sr_1'>Avengers :Age of Ultrathon</a>", "PG-13","10.99","aven.jpg");
+		var A2 = new Movie("Action", "<a href='http://www.imdb.com/title/tt0369610/?ref_=fn_al_tt_1'>Jurassic World</a>", "PG-13","12.99","JW.jpg");
+		var A3 = new Movie("Action", "<a href='http://www.imdb.com/title/tt1340138/?ref_=tt_rec_tt'>Terminator Genisys</a>", "PG-13","12.99","term.jpg");
+		
+		var D1 = new Movie("Drama", "<a href='http://www.imdb.com/title/tt2719848/?ref_=fn_al_tt_1'>Everest</a>", "PG-13","12.99","ever.jpg");
+		var D2 = new Movie("Drama", "<a href='http://www.imdb.com/title/tt3488710/?ref_=nv_sr_2'>The Walk</a>", "PG","12.99","walk.jpg");
+		var D3 = new Movie("Drama", "<a href='http://www.imdb.com/title/tt2503944/?ref_=fn_al_tt_1'>Burnt</a>", "R","12.99","burnt.jpg");
+		
+		
+		document.write("<b><h2><div>Movies Inventory</div></h2></b><br>");
+				
+		var Comedy = [C1,C2,C3];
+		var Action = [A1,A2,A3];
+		var Drama  = [D1,D2,D3];
+	
+		
+		//2D array consisting of 3 genres
+		var inventory = [Comedy,Action,Drama]; 
+		document.write("<i>No.of genres in the Inventory : "+inventory.length+"<br><br></i>");
+		
+		document.writeln("<table border='1' style='width:65%' align = 'center'>"+
+									"<tr>"+
+									"<th>Comedy</th>"+
+									"<th>Action</th>"+
+									"<th>Drama</th>"+
+									"</tr>");	
+									
+
+		//For Displaying :
+		document.writeln("<tr>");
+		for (var i = 0; i < inventory.length; i++) 
+		{		
+		  for (var j = 0; j < inventory.length; j++) 
+		  {	
+			document.writeln("<td>");
+			inventory[i][j].show();
+			document.writeln("</td>");
+		  }
+		document.writeln("</tr>");
+		}		
+		document.writeln("</table>");
+</script>
+</p>
+</body>
+</html>

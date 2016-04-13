@@ -1,0 +1,83 @@
+<html>
+<head>
+	<title>Lab 8</title>
+	<meta charset="utf-8">
+		<style>
+		body	
+		{
+		background: url("JWBack.jpg") no-repeat;			
+		background-size: cover;
+		font-size : 150pt;
+		color : #006400;
+		align: center;
+		}
+		</style>
+	<script type="text/javascript">
+
+		function Movie(title,actor) 
+		{
+			this.title = title;
+			this.actor = actor;
+		}	
+		//Creating a Movie Object
+		var myMovie = new Movie("http://www.imdb.com/title/tt0369610/","http://www.imdb.com/name/nm0695435/?ref_=ttfc_fc_cl_t1");
+		
+		//Object properties assigned to local variables
+		var urlMovie = myMovie.title;
+		var urlActor = myMovie.actor;
+		var dim = "height=800,width=1000,left=200,menubar,toolbar,status,resizable";
+		myWin = window.open("", "", "height=800,width=1000,location,menubar,toolbar,status,resizable");	
+		//Func to display more info on actor
+		function aInfoWindow() 
+		{
+			//actorWin2= window.open(urlActor,"ActorIMDB","height=800,width=1000,left=400,menubar,toolbar,status,resizable");	
+			//actorWin2.blur();
+			////myWin.open(urlActor,"",dim);
+			myWin.location = urlActor;
+			myWin.focus();
+		}
+		//Func to display actor window
+		function aWindow(x) 
+		{
+			actorWin= window.open("","",dim);
+			actorWin.document.write("<style>a{color : #EEE8AA;}body{background: url('CP.jpg') no-repeat;background-size: cover;font-size : 20pt;color : #EEE8AA;}</style><body  align = 'center'>");
+			actorWin.document.write("<body align=center><b>Chris Pratt -- About the Hero of Jurassic World!<hr></b><p><b>Christopher Michael 'Chris' Pratt(born June 21, 1979)is an American actor. He is known for his television roles, including Bright Abbott in Everwood, and Andy Dwyer in Parks and Recreation.</p><p>His early film career began with supporting roles in mainstream films such as Wanted (2008), Moneyball (2011), The Five-Year Engagement (2012), Zero Dark Thirty (2012), Delivery Man (2013), and Her (2013) before achieving leading man status in 2014 after starring in two commercially successful films: The Lego Movie, a computer-animated adventure comedy; and Guardians of the Galaxy, a live-action superhero film produced by Marvel Studios in which he portrayed Peter Quill / Star-Lord. In 2015, he starred in Jurassic World, the fourth installment in the Jurassic Park franchise and his most financially successful film. In 2014, Pratt was ranked as No. 2 on People magazine's annual list of Sexiest Men Alive.</p></body>");
+			//actorWin2 creation
+			actorWin.document.write("<br><br><a href='javascript:opener.aInfoWindow();'");
+			actorWin.document.write(");'>Click here for more informtion</a>");
+			
+		}
+		//Close the actor window
+		function actorclose()
+		{
+			actorWin.close();
+		}
+		
+	//main Window creation	
+	myWin.document.write("<style>a{color : #EEE8AA;}body{background: url('JW.jpg') no-repeat;background-size: cover;font-size : 20pt;color : #EEE8AA;}</style><body  align = 'center'>");
+	myWin.document.write("<b><br><br>Jurassic World -- About the Movie!</b><hr><hr>");
+	myWin.document.write("<p><b>Located off the coast of Costa Rica, the Jurassic World luxury resort provides a habitat for an array of genetically engineered dinosaurs, including the vicious and intelligent Indominus rex. When the massive creature escapes, it sets off a chain reaction that causes the other dinos to run amok. Now, it's up to a former military man and animal expert (Chris Pratt) to use his special skills to save two young brothers and the rest of the tourists from an all-out, prehistoric assault.</p>");
+	
+	myWin.document.write("<br><br><br><br><br><br><br>");	
+	
+	//movieWin creation
+	myWin.document.write("<a href='javascript: movieWin= window.open(\""+urlMovie+"\",\"movieWindow\",\""+dim+"\"");
+	myWin.document.write(");'>Click here to ACCESS the MOVIE window</a><br>");
+	
+	//actorWin creation
+	myWin.document.write("<a href='javascript:opener.aWindow();'>Click here to ACCESS the ACTOR window</a><br>");	
+	
+	//Close movieWin
+	myWin.document.write("<a href='javascript:movieWin.close();'> Click here to CLOSE the MOVIE window</a><br>");	
+	
+	//Close actorWin
+	myWin.document.write("<a href='javascript:opener.actorclose();'> Click here to CLOSE the ACTOR window</a><br>");
+	
+	//Close orig
+	myWin.document.write("<a href='javascript:window.close();'>Click here to CLOSE THIS window</a><br></b>");
+	
+</script>
+</head>
+<body>
+</body>
+</html>
